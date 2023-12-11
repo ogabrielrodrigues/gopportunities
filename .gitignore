@@ -1,0 +1,4 @@
+config.toml
+.env
+node_modules
+vendor
