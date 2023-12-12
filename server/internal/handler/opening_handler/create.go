@@ -46,5 +46,5 @@ func (oh *openingHandler) Create(w http.ResponseWriter, r *http.Request) {
 		rest.JSON(w, rest_err.Code, rest_err)
 	}
 
-	rest.JSON(w, http.StatusOK, view.OpeningToView(opening))
+	rest.JSON(w, http.StatusCreated, view.OpeningToView(opening))
 }
