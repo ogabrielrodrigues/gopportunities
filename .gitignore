@@ -1,4 +1,33 @@
-config.toml
+# Binaries
+*.exe
+*.dll
+*.dylib
+*.so
+
+# Output
+*.o
+
+# Environment
 .env
-node_modules
-vendor
+.env.local
+.env.development
+config.toml
+
+# Logs
+logs.jso
+*.dll
+*.dylib
+*.so
+
+# Output
+*.o
+
+# Environment
+.env
+.env.local
+.env.development
+config.toml
+
+# Logs
+logs.json
+logs.txt
