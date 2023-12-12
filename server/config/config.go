@@ -7,8 +7,9 @@ import (
 )
 
 type serverConfig struct {
-	Port   string
-	Origin string
+	Port     string
+	Origin   string
+	Database string
 }
 
 var config *serverConfig
@@ -23,8 +24,9 @@ func Load() error {
 	}
 
 	config = &serverConfig{
-		Port:   viper.GetString("server.port"),
-		Origin: viper.GetString("server.origin"),
+		Port:     viper.GetString("server.port"),
+		Origin:   viper.GetString("server.origin"),
+		Database: viper.GetString("server.database"),
 	}
 
 	return nil

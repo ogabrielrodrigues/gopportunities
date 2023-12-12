@@ -14,20 +14,8 @@
 config.toml
 
 # Logs
-logs.jso
-*.dll
-*.dylib
-*.so
-
-# Output
-*.o
-
-# Environment
-.env
-.env.local
-.env.development
-config.toml
-
-# Logs
 logs.json
 logs.txt
+
+# Tmp
+tmp
