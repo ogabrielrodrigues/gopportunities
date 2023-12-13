@@ -17,7 +17,7 @@ func openingRoutes() http.Handler {
 
 	or.Post("/", oh.Create)
 	or.Get("/{id}", oh.Show)
-	or.Get("/", oh.List)
+	or.Get("/list", oh.List)
 	or.Put("/{id}", oh.Update)
 	or.Delete("/{id}", oh.Delete)
 

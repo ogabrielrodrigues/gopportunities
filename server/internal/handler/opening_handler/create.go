@@ -2,6 +2,7 @@ package handler
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 
 	"github.com/ogabrielrodrigues/gopportunities/config/logger"
@@ -46,5 +47,6 @@ func (oh *openingHandler) Create(w http.ResponseWriter, r *http.Request) {
 		rest.JSON(w, rest_err.Code, rest_err)
 	}
 
+	w.Header().Set("Location", fmt.Sprintf("/opening/%s", opening.GetID()))
 	rest.JSON(w, http.StatusCreated, view.OpeningToView(opening))
 }

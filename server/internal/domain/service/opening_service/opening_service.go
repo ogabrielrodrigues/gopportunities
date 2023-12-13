@@ -13,6 +13,7 @@ type openingService struct {
 type OpeningService interface {
 	Create(entity.Opening) (entity.Opening, *rest.RestErr)
 	Show(string) (entity.Opening, *rest.RestErr)
+	List() ([]entity.Opening, *rest.RestErr)
 }
 
 func NewOpeningService(repository repository.OpeningRepository) OpeningService {
