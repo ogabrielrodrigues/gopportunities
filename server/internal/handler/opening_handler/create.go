@@ -45,6 +45,7 @@ func (oh *openingHandler) Create(w http.ResponseWriter, r *http.Request) {
 		logger.Err("error on opening creation", err)
 		rest_err := rest.NewBadRequestErr("error on opening creation", nil)
 		rest.JSON(w, rest_err.Code, rest_err)
+		return
 	}
 
 	w.Header().Set("Location", fmt.Sprintf("/opening/%s", opening.GetID()))

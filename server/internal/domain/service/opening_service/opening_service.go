@@ -15,6 +15,7 @@ type OpeningService interface {
 	Show(string) (entity.Opening, *rest.RestErr)
 	List() ([]entity.Opening, *rest.RestErr)
 	Update(string, entity.Opening) (entity.Opening, *rest.RestErr)
+	Delete(string) *rest.RestErr
 }
 
 func NewOpeningService(repository repository.OpeningRepository) OpeningService {

@@ -53,6 +53,7 @@ func (oh *openingHandler) Update(w http.ResponseWriter, r *http.Request) {
 		logger.Err("error on opening update", err)
 		rest_err := rest.NewBadRequestErr("error on opening update", nil)
 		rest.JSON(w, rest_err.Code, rest_err)
+		return
 	}
 
 	rest.JSON(w, http.StatusOK, view.OpeningToView(opening))
