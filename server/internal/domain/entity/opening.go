@@ -14,12 +14,19 @@ type opening struct {
 type Opening interface {
 	SetID(id string)
 	GetID() string
+	SetRole(role string)
 	GetRole() string
+	SetDescription(description string)
 	GetDescription() string
+	SetCompany(company string)
 	GetCompany() string
+	SetLocation(location string)
 	GetLocation() string
+	SetRemote(remote bool)
 	GetRemote() bool
+	SetLink(link string)
 	GetLink() string
+	SetSalary(salary uint64)
 	GetSalary() uint64
 }
 
@@ -46,28 +53,56 @@ func (o *opening) GetID() string {
 	return o.id
 }
 
+func (o *opening) SetRole(role string) {
+	o.role = role
+}
+
 func (o *opening) GetRole() string {
 	return o.role
+}
+
+func (o *opening) SetDescription(description string) {
+	o.description = description
 }
 
 func (o *opening) GetDescription() string {
 	return o.description
 }
 
+func (o *opening) SetCompany(company string) {
+	o.company = company
+}
+
 func (o *opening) GetCompany() string {
 	return o.company
+}
+
+func (o *opening) SetLocation(location string) {
+	o.location = location
 }
 
 func (o *opening) GetLocation() string {
 	return o.location
 }
 
+func (o *opening) SetRemote(remote bool) {
+	o.remote = remote
+}
+
 func (o *opening) GetRemote() bool {
 	return o.remote
 }
 
+func (o *opening) SetLink(link string) {
+	o.link = link
+}
+
 func (o *opening) GetLink() string {
 	return o.link
+}
+
+func (o *opening) SetSalary(salary uint64) {
+	o.salary = salary
 }
 
 func (o *opening) GetSalary() uint64 {

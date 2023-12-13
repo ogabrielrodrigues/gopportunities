@@ -6,11 +6,11 @@ import (
 	"github.com/ogabrielrodrigues/gopportunities/internal/domain/entity"
 )
 
-func (or *openingRepository) Create(entity entity.Opening) (string, *rest.RestErr) {
+func (or *openingRepository) Create(entity entity.Opening) (entity.Opening, *rest.RestErr) {
 	conn, err := or.database.Connect()
 	if err != nil {
 		logger.Err(err.Error(), err)
-		return "", rest.NewInternalServerErr(err.Error())
+		return nil, rest.NewInternalServerErr(err.Error())
 	}
 	defer conn.Close()
 
@@ -27,14 +27,16 @@ func (or *openingRepository) Create(entity entity.Opening) (string, *rest.RestEr
 
 	if row.Err() != nil {
 		logger.Err(err.Error(), err)
-		return "", rest.NewInternalServerErr(err.Error())
+		return nil, rest.NewInternalServerErr(err.Error())
 	}
 
 	var id string
 	if err = row.Scan(&id); err != nil {
 		logger.Err(err.Error(), err)
-		return "", rest.NewInternalServerErr(err.Error())
+		return nil, rest.NewInternalServerErr(err.Error())
 	}
 
-	return id, nil
+	entity.SetID(id)
+
+	return entity, nil
 }

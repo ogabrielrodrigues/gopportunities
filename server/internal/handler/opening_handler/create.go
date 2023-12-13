@@ -14,7 +14,7 @@ import (
 )
 
 func (oh *openingHandler) Create(w http.ResponseWriter, r *http.Request) {
-	body := request.OpeningRequest{}
+	body := request.OpeningCreateRequest{}
 
 	if err := json.NewDecoder(r.Body).Decode(&body); err != nil {
 		logger.Err("error decoding request body", err)

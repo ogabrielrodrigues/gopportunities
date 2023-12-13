@@ -11,9 +11,10 @@ type openingRepository struct {
 }
 
 type OpeningRepository interface {
-	Create(entity.Opening) (string, *rest.RestErr)
+	Create(entity.Opening) (entity.Opening, *rest.RestErr)
 	Show(string) (entity.Opening, *rest.RestErr)
 	List() ([]entity.Opening, *rest.RestErr)
+	Update(string, entity.Opening) (entity.Opening, *rest.RestErr)
 }
 
 func NewOpeningRepository(database database.DB) OpeningRepository {
