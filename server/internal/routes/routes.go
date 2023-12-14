@@ -8,7 +8,7 @@ import (
 )
 
 func RegisterRoutes(router *chi.Mux) {
-	router.Mount("/opening", openingRoutes())
+	router.Mount("/api/v1/opening", openingRoutes())
 }
 
 func openingRoutes() http.Handler {

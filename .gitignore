@@ -1,4 +1,5 @@
 # Binaries
+bin
 *.exe
 *.dll
 *.dylib
@@ -19,3 +20,6 @@ logs.txt
 
 # Tmp
 tmp
+
+# Swagger Docs
+docs
