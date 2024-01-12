@@ -10,13 +10,16 @@ import (
 	"github.com/ogabrielrodrigues/gopportunities/internal/routes"
 )
 
+// @title Gopportunities
+// @version 1.0
+// @description Gopportunities. Find a new job opportunity
+// @BasePath /api/v1
 func main() {
 	if err := config.Load(); err != nil {
 		panic(err)
 	}
 
 	router := chi.NewRouter()
-	routes.RegisterMiddlewares(router)
 	routes.RegisterRoutes(router)
 
 	logger.Info(fmt.Sprintf("server running on %s", config.GetServerConfig().Port))

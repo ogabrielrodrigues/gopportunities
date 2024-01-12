@@ -3,7 +3,7 @@ package repository
 import (
 	"github.com/ogabrielrodrigues/gopportunities/config/logger"
 	"github.com/ogabrielrodrigues/gopportunities/config/rest"
-	"github.com/ogabrielrodrigues/gopportunities/internal/domain/entity"
+	"github.com/ogabrielrodrigues/gopportunities/internal/entity"
 )
 
 func (or *openingRepository) Update(id string, entity entity.Opening) (entity.Opening, *rest.RestErr) {

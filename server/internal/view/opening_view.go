@@ -1,8 +1,8 @@
 package view
 
 import (
-	"github.com/ogabrielrodrigues/gopportunities/internal/domain/entity"
-	"github.com/ogabrielrodrigues/gopportunities/internal/handler/dto/response"
+	"github.com/ogabrielrodrigues/gopportunities/internal/dto/response"
+	"github.com/ogabrielrodrigues/gopportunities/internal/entity"
 )
 
 func OpeningToView(opening entity.Opening) *response.OpeningResponse {

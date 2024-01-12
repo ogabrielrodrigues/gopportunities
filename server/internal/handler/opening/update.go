@@ -8,13 +8,25 @@ import (
 	"github.com/ogabrielrodrigues/gopportunities/config/logger"
 	"github.com/ogabrielrodrigues/gopportunities/config/rest"
 	"github.com/ogabrielrodrigues/gopportunities/config/validation"
-	"github.com/ogabrielrodrigues/gopportunities/internal/domain/entity"
-	"github.com/ogabrielrodrigues/gopportunities/internal/handler/dto/request"
+	"github.com/ogabrielrodrigues/gopportunities/internal/dto/request"
+	"github.com/ogabrielrodrigues/gopportunities/internal/entity"
 	"github.com/ogabrielrodrigues/gopportunities/internal/view"
 )
 
+// Update Opening godoc
+// @Summary      Update opening
+// @Description  Receive user request body to update a opening
+// @Tags         Opening
+// @Accept       json
+// @Produce      json
+// @Param        id path string true "Request Param"
+// @Param        request body request.CreateOpeningRequest true "Request Body"
+// @Success      200  {object}  response.OpeningResponse
+// @Failure      400  {object}  rest.RestErr
+// @Failure      500  {object}  rest.RestErr
+// @Router       /opening/{id} [put]
 func (oh *openingHandler) Update(w http.ResponseWriter, r *http.Request) {
-	body := request.OpeningUpdateRequest{}
+	body := request.UpdateOpeningRequest{}
 	id := chi.URLParam(r, "id")
 
 	if err := validation.Validate.Var(id, "uuid4"); err != nil {

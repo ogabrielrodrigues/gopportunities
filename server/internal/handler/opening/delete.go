@@ -9,6 +9,16 @@ import (
 	"github.com/ogabrielrodrigues/gopportunities/config/validation"
 )
 
+// Delete Opening godoc
+// @Summary      Delete opening
+// @Description  Receive user param to delete opening
+// @Tags         Opening
+// @Produce      json
+// @Param        id path string true "Request Param"
+// @Success      200  {object}  response.OpeningResponse
+// @Failure      400  {object}  rest.RestErr
+// @Failure      500  {object}  rest.RestErr
+// @Router       /opening/{id} [delete]
 func (oh *openingHandler) Delete(w http.ResponseWriter, r *http.Request) {
 	id := chi.URLParam(r, "id")
 

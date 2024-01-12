@@ -1,6 +1,6 @@
 package request
 
-type OpeningCreateRequest struct {
+type CreateOpeningRequest struct {
 	Role        string `json:"role" validate:"required,min=4,max=100"`
 	Description string `json:"description" validate:"required,min=10,max=400"`
 	Company     string `json:"company" validate:"required,min=3,max=50"`
@@ -10,7 +10,7 @@ type OpeningCreateRequest struct {
 	Salary      uint64 `json:"salary" validate:"required,min=1"`
 }
 
-type OpeningUpdateRequest struct {
+type UpdateOpeningRequest struct {
 	Role        string `json:"role"`
 	Description string `json:"description"`
 	Company     string `json:"company"`

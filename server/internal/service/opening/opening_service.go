@@ -2,8 +2,8 @@ package service
 
 import (
 	"github.com/ogabrielrodrigues/gopportunities/config/rest"
-	"github.com/ogabrielrodrigues/gopportunities/internal/domain/entity"
-	repository "github.com/ogabrielrodrigues/gopportunities/internal/domain/repository/opening_repository"
+	"github.com/ogabrielrodrigues/gopportunities/internal/entity"
+	repository "github.com/ogabrielrodrigues/gopportunities/internal/repository/opening"
 )
 
 type openingService struct {

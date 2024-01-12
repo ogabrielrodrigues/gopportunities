@@ -3,7 +3,7 @@ package repository
 import (
 	"github.com/ogabrielrodrigues/gopportunities/config/database"
 	"github.com/ogabrielrodrigues/gopportunities/config/rest"
-	"github.com/ogabrielrodrigues/gopportunities/internal/domain/entity"
+	"github.com/ogabrielrodrigues/gopportunities/internal/entity"
 )
 
 type openingRepository struct {

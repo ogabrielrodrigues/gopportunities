@@ -5,10 +5,19 @@ import (
 
 	"github.com/ogabrielrodrigues/gopportunities/config/logger"
 	"github.com/ogabrielrodrigues/gopportunities/config/rest"
-	"github.com/ogabrielrodrigues/gopportunities/internal/handler/dto/response"
+	"github.com/ogabrielrodrigues/gopportunities/internal/dto/response"
 	"github.com/ogabrielrodrigues/gopportunities/internal/view"
 )
 
+// List Opening godoc
+// @Summary      List openings
+// @Description  List all openings
+// @Tags         Opening
+// @Produce      json
+// @Success      200  {object}  []response.OpeningResponse
+// @Failure      400  {object}  rest.RestErr
+// @Failure      500  {object}  rest.RestErr
+// @Router       /opening [get]
 func (oh *openingHandler) List(w http.ResponseWriter, r *http.Request) {
 	openings, err := oh.service.List()
 	if err != nil {

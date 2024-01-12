@@ -2,9 +2,9 @@ package resource
 
 import (
 	"github.com/ogabrielrodrigues/gopportunities/config/database/postgres"
-	repository "github.com/ogabrielrodrigues/gopportunities/internal/domain/repository/opening_repository"
-	service "github.com/ogabrielrodrigues/gopportunities/internal/domain/service/opening_service"
-	handler "github.com/ogabrielrodrigues/gopportunities/internal/handler/opening_handler"
+	handler "github.com/ogabrielrodrigues/gopportunities/internal/handler/opening"
+	repository "github.com/ogabrielrodrigues/gopportunities/internal/repository/opening"
+	service "github.com/ogabrielrodrigues/gopportunities/internal/service/opening"
 )
 
 func OpeningResource() handler.OpeningHandler {

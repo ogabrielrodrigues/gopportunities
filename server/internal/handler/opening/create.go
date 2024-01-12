@@ -8,13 +8,24 @@ import (
 	"github.com/ogabrielrodrigues/gopportunities/config/logger"
 	"github.com/ogabrielrodrigues/gopportunities/config/rest"
 	"github.com/ogabrielrodrigues/gopportunities/config/validation"
-	"github.com/ogabrielrodrigues/gopportunities/internal/domain/entity"
-	"github.com/ogabrielrodrigues/gopportunities/internal/handler/dto/request"
+	"github.com/ogabrielrodrigues/gopportunities/internal/dto/request"
+	"github.com/ogabrielrodrigues/gopportunities/internal/entity"
 	"github.com/ogabrielrodrigues/gopportunities/internal/view"
 )
 
+// Create Opening godoc
+// @Summary      Create new opening
+// @Description  Receive user request body to create a new opening
+// @Tags         Opening
+// @Accept       json
+// @Produce      json
+// @Param        request body request.CreateOpeningRequest true "Request Body"
+// @Success      200  {object}  response.OpeningResponse
+// @Failure      400  {object}  rest.RestErr
+// @Failure      500  {object}  rest.RestErr
+// @Router       /opening [post]
 func (oh *openingHandler) Create(w http.ResponseWriter, r *http.Request) {
-	body := request.OpeningCreateRequest{}
+	body := request.CreateOpeningRequest{}
 
 	if err := json.NewDecoder(r.Body).Decode(&body); err != nil {
 		logger.Err("error decoding request body", err)

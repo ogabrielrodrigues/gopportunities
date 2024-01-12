@@ -1,4 +1,4 @@
-package routes
+package middleware
 
 import (
 	"time"
@@ -12,7 +12,6 @@ import (
 func RegisterMiddlewares(router *chi.Mux) {
 	router.Use(middleware.RequestID)
 	router.Use(middleware.RealIP)
-	router.Use(middleware.Logger)
 	router.Use(middleware.Recoverer)
 	router.Use(middleware.Timeout(60 * time.Second))
 

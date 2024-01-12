@@ -8,9 +8,9 @@ MIGRATIONS_PATH=config/database/${DATABASE_DRIVER}/migration
 default: run
 
 docs: 
-	@swag init
+	@swag init -q -d "./" -g "cmd/main.go"
 
-run:
+run: docs
 	@go run cmd/main.go
 
 clean:
@@ -18,7 +18,7 @@ clean:
 	@rm -rf docs
 
 build: clean docs
-	@go build -C cmd -o ../bin/${APP_NAME}
+	@go build -C cmd -o ../${APP_NAME}
 
 migrate_up:
 	@docker-compose up -d

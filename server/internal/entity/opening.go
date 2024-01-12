@@ -12,21 +12,21 @@ type opening struct {
 }
 
 type Opening interface {
-	SetID(id string)
+	SetID(string)
 	GetID() string
-	SetRole(role string)
+	SetRole(string)
 	GetRole() string
-	SetDescription(description string)
+	SetDescription(string)
 	GetDescription() string
-	SetCompany(company string)
+	SetCompany(string)
 	GetCompany() string
-	SetLocation(location string)
+	SetLocation(string)
 	GetLocation() string
-	SetRemote(remote bool)
+	SetRemote(bool)
 	GetRemote() bool
-	SetLink(link string)
+	SetLink(string)
 	GetLink() string
-	SetSalary(salary uint64)
+	SetSalary(uint64)
 	GetSalary() uint64
 }
 
