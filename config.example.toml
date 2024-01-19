@@ -1,0 +1,6 @@
+# put in your config.toml
+
+[server]
+port = ""
+origin = ""
+database = "" # default driver is postgres
