@@ -10,7 +10,6 @@ import (
 var logger *zap.Logger
 
 func init() {
-	logs_file, _ := os.OpenFile("logs.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	log_config := zapcore.EncoderConfig{
 		LevelKey:     "level",
 		TimeKey:      "time",
@@ -25,7 +24,6 @@ func init() {
 	logger = zap.New(
 		zapcore.NewTee(
 			zapcore.NewCore(json_encoder, zapcore.AddSync(os.Stdout), zapcore.InfoLevel),
-			zapcore.NewCore(json_encoder, zapcore.AddSync(logs_file), zapcore.InfoLevel),
 		),
 		zap.AddCaller(),
 		zap.AddStacktrace(zapcore.ErrorLevel),
